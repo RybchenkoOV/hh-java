@@ -7,6 +7,12 @@ public class Train extends Vehicle implements Ridable, Steerable{
 
   private int maxSpeed;
 
+  public void setPrice(int price) {
+    this.price = price;
+  }
+
+  private int price;
+
   public int getMaxSpeed() {
     return maxSpeed;
   }
@@ -26,8 +32,14 @@ public class Train extends Vehicle implements Ridable, Steerable{
   }
 
   @Override
-  public void setVehicleMark(String mark) {
+  public String setVehicleMark(String mark) {
     vehicleMarkStore = mark;
+    return mark;
+  }
+
+  @Override
+  public int getVehiclePrice() {
+    return this.price;
   }
 
   @Override

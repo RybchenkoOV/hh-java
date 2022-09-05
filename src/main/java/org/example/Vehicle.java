@@ -14,5 +14,7 @@ private String type;
     this.type = type;
   }
 
-  public abstract void setVehicleMark(String mark);
+  public abstract String setVehicleMark(String mark);
+
+  public abstract int getVehiclePrice();
 }

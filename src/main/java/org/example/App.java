@@ -65,9 +65,15 @@ public class App {
 
     System.out.println("Инфо о победителе:");
     carCompetitor.getCarInfo();
+
+
+    // Generics. А теперь переработаем на металлолом участников и получим деньжат
+    Recycler<Car> carToRecycle = new Recycler<>();
+    Recycler<Train> trainToRecycle = new Recycler<>();
+    carToRecycle.moneyOutput(carCompetitor);
+    trainToRecycle.moneyOutput(trainCompetitor);
+
   }
-
-
   // Объявляем вложенный класс (не было много времени на создание полноценной модели)
   public static class Track implements Refuelable {
     private final int DESTINATION = 1000;
@@ -108,6 +114,7 @@ public class App {
     train.canMoveForwardBackward(true);
     train.canTurnLeftRight(false);
     train.setMaxSpeed(100); // Т.к. в конструкторе нет явного определения скорости и параметр приватный, используем сеттер
+    train.setPrice(10000000);
     return train;
   }
 

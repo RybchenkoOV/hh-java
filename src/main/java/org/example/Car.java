@@ -5,6 +5,11 @@ package org.example;
  */
 public class Car extends Vehicle implements Ridable, Refuelable, Steerable {
   private String color; // цвет машины
+
+  public int getPrice() {
+    return price;
+  }
+
   private int price; // цена машины
 
   public double getMaxSpeed() {
@@ -67,8 +72,14 @@ public class Car extends Vehicle implements Ridable, Refuelable, Steerable {
   }
 
   @Override
-  public void setVehicleMark(String mark) {
+  public String setVehicleMark(String mark) {
     vehicleMarkStore = mark;
+    return mark;
+  }
+
+  @Override
+  public int getVehiclePrice() {
+    return this.price;
   }
 
   @Override
